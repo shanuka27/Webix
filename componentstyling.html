@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.webix.com/edge/webix.css"
+         type="text/css"> 
+    <script src="https://cdn.webix.com/edge/webix.js" type="text/javascript"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript" charset="utf-8">
+
+        var coffee = [
+            { id:"img1", image:"images/download1.jpg", title:"coffee 1"},
+            { id:"img2", image:"images/download2.jpg", title:"coffee 2"},
+            { id:"img3", image:"images/download3.jpg", title:"coffee 3"},
+            { id:"img4", image:"images/download4.jpg", title:"coffee 4"},
+            { id:"img5", image:"images/images1.jpg", title:"coffee 5"},
+        ]
+
+        var cake = [
+            { id:"img1", image:"images/download1.jpg", title:"coffee 1"},
+            { id:"img2", image:"images/download2.jpg", title:"coffee 2"},
+        ]
+
+        var moktail = [
+            { id:"img1", image:"images/download1.jpg", title:"coffee 1"},
+            { id:"img2", image:"images/download2.jpg", title:"coffee 2"},
+        ]
+
+        var coffeelist = {
+            header: "coffee",
+            headerHeight: 50,
+            headerAltHeight: 50,
+            body: {
+                view: "dataview",
+                data: coffee,
+                item:{
+                    width: 300,
+                    height: 300,
+                    type: "tiles",
+                },
+                template: ` <div class='image'>
+                                <img src='#image#'>
+                            </div>
+                            <button class='webixbutton'>#title#</button>
+                        `
+            }
+        }
+
+        var cakelist = {
+            header: "cake",
+            headerHeight: 50,
+            collapsed: true,
+            headerAltHeight: 50,
+            body: {
+                view: "dataview",
+                data: cake,
+                item:{
+                    width: 300,
+                    height: 300,
+                    type: "tiles",
+                },
+                template: ` <div class='image'>
+                                <img src='#image#'>
+                            </div>
+                            <button class='webixbutton'>#title#</button>
+                        `
+            }
+        }
+
+        var moktaillist = {
+            header: "Moktail",
+            headerHeight: 50,
+            collapsed: true,
+            headerAltHeight: 50,
+            body: {
+                view: "dataview",
+                data: moktail,
+                item:{
+                    width: 300,
+                    height: 300,
+                    type: "tiles",
+                },
+                template: ` <div class='image'>
+                                <img src='#image#'>
+                            </div>
+                            <button class='webixbutton'>#title#</button>
+                        `
+            }
+        }
+
+        webix.ui({
+            view: "accordion",
+            type: "space",
+            rows:[
+                coffeelist,
+                cakelist,
+                moktaillist
+            ]
+        })
+    </script>
+    
+</body>
+</html>
